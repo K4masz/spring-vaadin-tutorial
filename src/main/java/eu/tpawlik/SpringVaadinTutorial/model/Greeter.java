@@ -1,4 +1,4 @@
-package eu.tpawlik.SpringVaadinTutorial;
+package eu.tpawlik.SpringVaadinTutorial.model;
 
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.UIScope;

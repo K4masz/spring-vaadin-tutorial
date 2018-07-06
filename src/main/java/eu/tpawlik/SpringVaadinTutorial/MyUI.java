@@ -8,6 +8,9 @@ import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.spring.annotation.SpringViewDisplay;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
+import eu.tpawlik.SpringVaadinTutorial.model.Greeter;
+import eu.tpawlik.SpringVaadinTutorial.views.UIScopedView;
+import eu.tpawlik.SpringVaadinTutorial.views.ViewScopedView;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Theme("valo")
@@ -29,6 +32,7 @@ public class MyUI extends UI implements ViewDisplay {
         final CssLayout navigationBar = new CssLayout();
         navigationBar.addStyleName(ValoTheme.LAYOUT_COMPONENT_GROUP);
         navigationBar.addComponent(createNavigationButton("View Scoped View", ViewScopedView.VIEW_NAME));
+        navigationBar.addComponent(createNavigationButton("UI Scoped View", UIScopedView.VIEW_NAME));
         root.addComponent(navigationBar);
 
         springViewDisplay = new Panel();
@@ -42,6 +46,7 @@ public class MyUI extends UI implements ViewDisplay {
         Button button = new Button(caption);
 
         button.addStyleName(ValoTheme.BUTTON_SMALL);
+
         button.addClickListener(event -> getUI().getNavigator().navigateTo(viewName));
         return button;
     }
